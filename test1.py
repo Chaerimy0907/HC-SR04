@@ -20,11 +20,13 @@ def connect_sensor(port='COM3'):
 def read_distance():
     global connection, current_distance
     if connection and connection.in_waiting>0:
-        data=connection.readline().decode().strip()
         try:
+            data=connection.readline().decode().strip()
             distance=float(data)
-            current_distance=distance
-            return distance
+            
+            if 2<=distance<=200:
+                current_distance=distance
+                return distance
         except:
             pass
     return None
