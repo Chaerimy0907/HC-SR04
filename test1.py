@@ -31,6 +31,7 @@ def read_distance():
             pass
     return None
 
+# Turtle 초기 설정
 s=turtle.getscreen()
 s.setup(600,600)
 turtle.shape("turtle")
