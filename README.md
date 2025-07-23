@@ -17,7 +17,23 @@
   - distance 값을 읽을 수 있을 때
   - 그 값이 10 미만인 경우엔 거북이 정지
   - 다른 경우엔 전진
-  - 거북이가 창에서 사라지지 않게 moving_right 상태변수를 이용하여 거북이의 x 좌표가 -200 또는 200 일 때 방향을 전환하여 직진함
+  - 
+  - ```python
+    '''
+    거북이가 창에서 사라지지 않게 moving_right 상태변수를 이용하여
+    거북이의 x 좌표가 -200 또는 200 일 때 방향을 전환하여 직진함
+    '''
+    
+    x, y = turtle.pos()
+    if moving_right and x >= 200:          # 거북이가 오른쪽으로 가고, x가 200 이상일 때
+       print("방향 전환")
+       turtle.setheading(180)
+       moving_right = False
+    elif not moving_right and x <= -200:   # 거북이가 왼쪽으로 가고, x가 -200 이하일 때
+       print("방향 전환")
+       turtle.setheading(0)
+       moving_right = True
+    ```
 
 
 ### 거리 측정이 불안정하여 코드 수정 필요
